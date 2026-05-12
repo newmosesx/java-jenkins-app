@@ -1,21 +1,20 @@
-pipeline{
-  
+pipeline {
   agent any
-  
+
   tools {
+    jdk 'Java'
     maven 'Maven'
   }
-  
-  stages{
-    
-    stage('building the application'){
-      steps{
-            sh 'echo "========Building Java Application============"'
-            sh 'mvn -v'
-            sh 'mvn clean package -B -DskipTests'
-            sh 'echo "======Building Java Application completed====="'
-        }
+
+  stages {
+    stage('Build application') {
+      steps {
+        sh 'echo "======== Building Java Application ========"'
+        sh 'java -version'
+        sh 'mvn -v'
+        sh 'mvn clean package -B -DskipTests'
+        sh 'echo "======== Build completed ========"'
       }
-    
+    }
   }
 }
