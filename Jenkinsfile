@@ -4,7 +4,7 @@ pipeline{
   
   tools {
     // '<name of tool>' given in the manage jenkins > Tools > Maven Installation
-    maven 'Maven 3.9'
+    maven 'Maven'
   }
 
   stages{
